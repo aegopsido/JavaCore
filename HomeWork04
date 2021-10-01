@@ -1,0 +1,31 @@
+package JavaCore04;
+
+import java.util.*;
+
+public class HomeWork04 {
+
+    public static void main(String[] args) {
+        String[] words = {"apple", "banana", "orange", "kiwi", "apple", "strawberry", "pineapple", "kiwi", "cherry", "orange", "grape", "banana"};
+
+        Map<String, Integer> map = new HashMap<>();
+        for (String word : words) {
+            map.put(word, map.getOrDefault(word, 0) + 1);
+        }
+        System.out.println(map);
+        System.out.println("");
+
+        Set<String> uniq = new HashSet<>(Arrays.asList(words));
+        System.out.println(uniq);
+        System.out.println("");
+
+        Phonebook pb = new Phonebook();
+
+        pb.add("Jackson", "456");
+        pb.add("Hurt", "789");
+        pb.add("Johnson","1011");
+        pb.add("Smith", "123");
+        pb.add("Hurt", "1213");
+
+        System.out.println(pb.get("Hurt"));
+    }
+}
