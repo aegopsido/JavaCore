@@ -1,0 +1,30 @@
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
+public class Temperature {
+    @JsonProperty(value = "Metric")
+    private JavaCore08.TemperatureUnit metric;
+    @JsonProperty(value = "Imperial")
+    private JavaCore08.TemperatureUnit imperial;
+
+    @JsonGetter("Metric")
+    public JavaCore08.TemperatureUnit getMetric() {
+        return metric;
+    }
+
+    @JsonSetter("Metric")
+    public void setMetric(JavaCore08.TemperatureUnit metric) {
+        this.metric = metric;
+    }
+
+    @JsonGetter("Imperial")
+    public JavaCore08.TemperatureUnit getImperial() {
+        return imperial;
+    }
+
+    @JsonSetter("Imperial")
+    public void setImperial(JavaCore08.TemperatureUnit imperial) {
+        this.imperial = imperial;
+    }
+}
